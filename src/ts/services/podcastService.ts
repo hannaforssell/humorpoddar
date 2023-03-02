@@ -17,6 +17,15 @@ export async function getPodcasts(categoryId: number, page: number): Promise<IGe
         return data.data;
     })
     .catch(() => {
-        return [];
+        return {
+            copyright: '',
+            pagination: {
+                page: 1,
+                size: 0,
+                totalhits: 0,
+                totalpages: 1
+            },
+            programs: [],
+        };
     });
 }
