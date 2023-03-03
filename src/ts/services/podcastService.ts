@@ -12,11 +12,9 @@ export async function getPodcasts(categoryId: number, page: number): Promise<IGe
             page: page,
             format: 'json'
         }
-    })
-    .then((data) => {
+    }).then((data) => {
         return data.data;
-    })
-    .catch(() => {
+    }).catch(() => {
         return {
             copyright: '',
             pagination: {

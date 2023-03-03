@@ -11,8 +11,7 @@ let errorMsgContainer: HTMLDivElement;
 export function init(container: HTMLDivElement) {
     mainContainer = container;
 
-    mainContainer.innerHTML = /*html*/
-    `
+    mainContainer.innerHTML = /*html*/ `
         <section id="podcastContainer"></section>
         <section id="errorMsgContainer"></section>
     `;
@@ -22,7 +21,7 @@ export function init(container: HTMLDivElement) {
 
     addPodcasts();
 
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('scroll', handleScroll);
     });
 }
@@ -42,10 +41,8 @@ export async function addPodcasts(page: number = 1) {
 }
 
 function createHTML(podcasts: IProgram[]) {
-
     for (const podcast of podcasts) {
-        podcastContainer.innerHTML += /*html*/
-        `
+        podcastContainer.innerHTML += /*html*/ `
             <article class="single-podcast">
                 <img src="${podcast.programimage}" alt="${podcast.name}" class="podcast-image">
                 <div class="podcast-text-container">
@@ -61,8 +58,9 @@ function createHTML(podcasts: IProgram[]) {
 async function handleScroll() {
     let documentHeight = document.body.scrollHeight;
     let currentScroll = window.scrollY + window.innerHeight;
-    let modifier = 50; 
-    if((currentScroll + modifier > documentHeight) && (totalPages !== null && currentPage <= totalPages)) {
+    let modifier = 50;
+
+    if ((currentScroll + modifier > documentHeight) && (totalPages !== null && currentPage <= totalPages)) {
         document.removeEventListener('scroll', handleScroll);
         currentPage++;
         await addPodcasts(currentPage);

@@ -13,12 +13,12 @@ export function getPodcasts(categoryId: number, page: number): Promise<IGetPodca
                     totalpages: 1
                 },
                 programs: [
-                    {name: 'Name1', programimage: 'Url1', description: 'Description1'},
-                    {name: 'Name2', programimage: 'Url2', description: 'Description2'},
-                    {name: 'Name3', programimage: 'Url3', description: 'Description3'}
+                    { name: 'Name1', programimage: 'Url1', description: 'Description1' },
+                    { name: 'Name2', programimage: 'Url2', description: 'Description2' },
+                    { name: 'Name3', programimage: 'Url3', description: 'Description3' }
                 ]
             })
         }
-        reject({});
+        reject();
     });
 }
