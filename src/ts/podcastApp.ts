@@ -8,7 +8,7 @@ let mainContainer: HTMLDivElement;
 let podcastContainer: HTMLDivElement;
 let errorMsgContainer: HTMLDivElement;
 
-export function init(container: HTMLDivElement) {
+export async function init(container: HTMLDivElement) {
     mainContainer = container;
 
     mainContainer.innerHTML = /*html*/ `
